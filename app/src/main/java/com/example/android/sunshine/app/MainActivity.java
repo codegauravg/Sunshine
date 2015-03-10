@@ -90,12 +90,16 @@ public class MainActivity extends ActionBarActivity {
             //Syntax: ArrayAdapter<String>.
             //Parameters: Context, ID of List Item Layout, ID of TextView, list of data.
             mForecastAdapter = new ArrayAdapter<String>(
-                            getActivity(),
-                            R.layout.list_item_forecast,
-                            R.id.list_item_forecast_textview,
-                            weekForecast);
+                    //Context(Parents Fragment Activity.
+                    getActivity(),
+                    //ID of the List Item Layout.
+                    R.layout.list_item_forecast,
+                    //ID of the TextView in Layout.
+                    R.id.list_item_forecast_textview,
+                    //List of Forecast Data.
+                    weekForecast);
 
-
+            //Get reference to to the ListView, and attach this adapter to Forecast Adapter.
             ListView listView=(ListView) rootView.findViewById(R.id.listView_forecast);
             listView.setAdapter(mForecastAdapter);
 
